@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +49,47 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-700">Register</h2>
+        
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="mt-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input id="name" type="text" name="name" required autofocus autocomplete="name" class="w-full mt-1 px-4 py-2 border rounded-md focus:ring focus:ring-indigo-200">
+            </div>
+            
+            <div class="mt-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input id="email" type="email" name="email" required autocomplete="username" class="w-full mt-1 px-4 py-2 border rounded-md focus:ring focus:ring-indigo-200">
+            </div>
+            
+            <div class="mt-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input id="password" type="password" name="password" required autocomplete="new-password" class="w-full mt-1 px-4 py-2 border rounded-md focus:ring focus:ring-indigo-200">
+            </div>
+            
+            <div class="mt-4">
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" class="w-full mt-1 px-4 py-2 border rounded-md focus:ring focus:ring-indigo-200">
+            </div>
+            
+            <div class="mt-4 flex items-center justify-between">
+                <a href="/login" class="text-sm text-indigo-600 hover:underline">Already registered?</a>
+                <button type="submit" class="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

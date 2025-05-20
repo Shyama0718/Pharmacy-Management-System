@@ -14,10 +14,10 @@
     </head>
     <body class="sb-nav-fixed">
         
-        @include ('layouts.partials.navbar');
+        @include ('layouts.superadminpartials.navbar');
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                @include ('layouts.partials.sidebar');
+                @include ('layouts.superadminpartials.sidebar');
             </div>
             <div id="layoutSidenav_content">
                 <main>
@@ -25,7 +25,7 @@
                         @yield('content')
                     </div>
                 </main>
-                @include ('layouts.partials.footer')
+                @include ('layouts.superadminpartials.footer')
             </div>
         </div>
 
